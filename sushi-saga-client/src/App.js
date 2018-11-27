@@ -37,16 +37,23 @@ class App extends Component {
     if(this.state.balance-price>=0){
       /*------------I Know this isnt correct but currently works---------------------------------*/
       //Unsure of how to do this with set state
-      this.state.sushis[id-1].eaten=true
+      // this.state.sushis[id-1].eaten=true
       /*------------I Know this isnt correct but currently works---------------------------------*/
 
+      let newSushis = this.state.sushis.map((sushi)=>{
+        if (sushi.id===id){
+          return {...sushi,eaten:true}
+        }else{
+          return sushi
+        }
+      })
       // attempt using setState
       //produces full array with duplicate element instead of taking the specific element
       // this.setState(()=>{
       //   return{sushis:[this.state.sushis[id-1].eaten=true,...this.state.sushis]}
       // })
       this.setState(()=>{
-        return {balance: (this.state.balance-price)}
+        return {balance: (this.state.balance-price), sushis:newSushis}
       })
     }
   }
