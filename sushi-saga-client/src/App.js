@@ -36,7 +36,7 @@ class App extends Component {
   handleEatSushi = (id,price)=>{
     if(this.state.balance-price>=0){
       /*------------I Know this isnt correct but currently works---------------------------------*/
-      //Unsure of how to this with set state
+      //Unsure of how to do this with set state
       this.state.sushis[id-1].eaten=true
       /*------------I Know this isnt correct but currently works---------------------------------*/
 
