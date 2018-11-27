@@ -36,10 +36,12 @@ class App extends Component {
   handleEatSushi = (id,price)=>{
     if(this.state.balance-price>=0){
       /*------------I Know this isnt correct but currently works---------------------------------*/
+      //Unsure of how to this with set state
       this.state.sushis[id-1].eaten=true
       /*------------I Know this isnt correct but currently works---------------------------------*/
 
-      //attempts using setState
+      // attempt using setState
+      //produces full array with duplicate element instead of taking the specific element
       // this.setState(()=>{
       //   return{sushis:[this.state.sushis[id-1].eaten=true,...this.state.sushis]}
       // })
@@ -56,7 +58,7 @@ class App extends Component {
             moreHandle={this.handleMoreButton}
             start={this.state.start}
             sushis={this.state.sushis}/>
-        <Table balance={this.state.balance}/>
+        <Table sushis={this.state.sushis} balance={this.state.balance}/>
       </div>
     );
   }

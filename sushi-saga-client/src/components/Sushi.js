@@ -6,7 +6,6 @@ const Sushi = (props) => {
       <div className="plate"
            onClick={()=>props.eatSushi(props.id,props.price)}>
            {
-             /* Tell me if this sushi has been eaten! */
              props.eaten ?
                null
              :
