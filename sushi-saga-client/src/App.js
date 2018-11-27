@@ -23,15 +23,23 @@ class App extends Component {
     })
   }
   handleMoreButton =()=>{
-    this.setState(()=>{
-      return {start:(this.state.start+4)}
-    })
+    if(this.state.start+4>=this.state.sushis.length){
+      this.setState(()=>{
+        return {start:0}
+      })
+    }else{
+      this.setState(()=>{
+        return {start:(this.state.start+4)}
+      })
+    }
   }
   handleEatSushi = (id,price)=>{
     if(this.state.balance-price>=0){
-      //------------I Know this isnt correct but currently works---------------------------------
+      /*------------I Know this isnt correct but currently works---------------------------------*/
       this.state.sushis[id-1].eaten=true
-      //------------I Know this isnt correct but currently works---------------------------------
+      /*------------I Know this isnt correct but currently works---------------------------------*/
+
+      //attempts using setState
       // this.setState(()=>{
       //   return{sushis:[this.state.sushis[id-1].eaten=true,...this.state.sushis]}
       // })
